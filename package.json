@@ -1,0 +1,24 @@
+{
+  "name": "repl-ui",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist/*.css"
+  ],
+  "type": "module",
+  "scripts": {
+    "build:css": "node ./build.js",
+    "build:vite": "vite build",
+    "dev": "vite"
+  },
+  "packageManager": "pnpm@10.26.0",
+  "devDependencies": {
+    "browserslist": "^4.28.1",
+    "lightningcss": "^1.30.2",
+    "lightningcss-cli": "^1.30.2",
+    "vite": "^7.3.1"
+  },
+  "peerDependencies": {
+    "@fontsource-variable/space-grotesk": "^5.2.10"
+  }
+}

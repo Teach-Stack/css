@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/index.css">
+    <title>REPL UI Preview</title>
+  </head>
+  <body style="background-color: var(--slate-1); margin: var(--pad-l)">
+    <h3>Buttons</h3>
+    <div style="margin: var(--pad-l)">
+      <button>Button</button>
+      <button class="primary">Button</button>
+      <button class="success">Button</button>
+      <button class="error">Button</button>
+      <button class="warning">Button</button>
+    </div>
+    <div style="margin: var(--pad-l)">
+      <button class="sm">Button</button>
+      <button class="primary sm">Button</button>
+      <button class="success sm">Button</button>
+      <button class="error sm">Button</button>
+      <button class="warning sm">Button</button>
+    </div>
+    <h3>Dialog</h3>
+    <div style="margin: var(--pad-l)">
+      <button command="show-modal" commandfor="dialog-demo">Open</button>
+      <dialog id="dialog-demo">
+        <p>Here is a simple dialog</p>
+      </dialog>
+    </div>
+    <script type="module">
+      import '@fontsource-variable/space-grotesk';
+    </script>
+  </body>
+</html>

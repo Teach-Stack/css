@@ -1,0 +1,154 @@
+:root {
+  /* Typography */
+  --font-sans: 'Space Grotesk Variable', sans-serif;
+
+
+  /* Base Colors */
+  --blue: oklch(0.623 0.214 259.815);
+  --slate: oklch(0.554 0.046 257.417);
+  --red: oklch(0.637 0.237 25.331);
+  --green: oklch(0.723 0.219 149.579);
+  --yellow: oklch(79.5% 0.184 86.047);
+
+  /* Color Scales */
+
+  --blue-0: color-mix(in oklch, var(--blue) 8%, white);
+  --blue-1: color-mix(in oklch, var(--blue) 15%, white);
+  --blue-2: color-mix(in oklch, var(--blue) 35%, white);
+  --blue-3: color-mix(in oklch, var(--blue) 55%, white);
+  --blue-4: color-mix(in oklch, var(--blue) 80%, white);
+  --blue-5: var(--blue);
+  --blue-6: color-mix(in oklch, var(--blue) 88%, black);
+  --blue-7: color-mix(in oklch, var(--blue) 78%, black);
+  --blue-8: color-mix(in oklch, var(--blue) 68%, black);
+  --blue-9: color-mix(in oklch, var(--blue) 60%, black);
+
+  --slate-0: color-mix(in oklch, var(--slate) 8%, white);
+  --slate-1: color-mix(in oklch, var(--slate) 15%, white);
+  --slate-2: color-mix(in oklch, var(--slate) 35%, white);
+  --slate-3: color-mix(in oklch, var(--slate) 55%, white);
+  --slate-4: color-mix(in oklch, var(--slate) 80%, white);
+  --slate-5: var(--slate);
+  --slate-6: color-mix(in oklch, var(--slate) 88%, black);
+  --slate-7: color-mix(in oklch, var(--slate) 78%, black);
+  --slate-8: color-mix(in oklch, var(--slate) 68%, black);
+  --slate-9: color-mix(in oklch, var(--slate) 60%, black);
+
+  --red-0: color-mix(in oklch, var(--red) 8%, white);
+  --red-1: color-mix(in oklch, var(--red) 15%, white);
+  --red-2: color-mix(in oklch, var(--red) 35%, white);
+  --red-3: color-mix(in oklch, var(--red) 55%, white);
+  --red-4: color-mix(in oklch, var(--red) 80%, white);
+  --red-5: var(--red);
+  --red-6: color-mix(in oklch, var(--red) 88%, black);
+  --red-7: color-mix(in oklch, var(--red) 78%, black);
+  --red-8: color-mix(in oklch, var(--red) 68%, black);
+  --red-9: color-mix(in oklch, var(--red) 60%, black);
+
+  --green-0: color-mix(in oklch, var(--green) 8%, white);
+  --green-1: color-mix(in oklch, var(--green) 15%, white);
+  --green-2: color-mix(in oklch, var(--green) 35%, white);
+  --green-3: color-mix(in oklch, var(--green) 55%, white);
+  --green-4: color-mix(in oklch, var(--green) 80%, white);
+  --green-5: var(--green);
+  --green-6: color-mix(in oklch, var(--green) 88%, black);
+  --green-7: color-mix(in oklch, var(--green) 78%, black);
+  --green-8: color-mix(in oklch, var(--green) 68%, black);
+  --green-9: color-mix(in oklch, var(--green) 60%, black);
+
+  --yellow-0: color-mix(in oklch, var(--yellow) 8%, white);
+  --yellow-1: color-mix(in oklch, var(--yellow) 15%, white);
+  --yellow-2: color-mix(in oklch, var(--yellow) 35%, white);
+  --yellow-3: color-mix(in oklch, var(--yellow) 55%, white);
+  --yellow-4: color-mix(in oklch, var(--yellow) 80%, white);
+  --yellow-5: var(--yellow);
+  --yellow-6: color-mix(in oklch, var(--yellow) 88%, black);
+  --yellow-7: color-mix(in oklch, var(--yellow) 78%, black);
+  --yellow-8: color-mix(in oklch, var(--yellow) 68%, black);
+  --yellow-9: color-mix(in oklch, var(--yellow) 60%, black);
+
+  /* Spacing */
+
+  --pad-xs: 0.25rem;
+  --pad-s: 0.5rem;
+  --pad-m: 0.75rem;
+  --pad-l: 1rem;
+  --pad-xl: 1.25rem;
+  --pad-xxl: 1.5rem;
+  --pad-xxxl: 2rem;
+
+  --vs-xs: 0.25rem;
+  --vs-s: 0.5rem;
+  --vs-base: 1rem;
+  --vs-m: 1.5rem;
+  --vs-l: 2rem;
+  --vs-xl: 4rem;
+  --vs-xxl: 6rem;
+
+  --min-vw: 360;
+  --max-vw: 800;
+
+
+  /* Borders */
+  --border-1: solid 1px black;
+  --border-2: solid 2px black;
+
+  --br-xs: 2px;
+  --br-s: 4px;
+  --br-m: 8px;
+  --br-l: 16px;
+  --br-xl: 24px;
+  --br-xxl: 32px;
+
+
+  /* Animations */
+  --ease-smooth: linear(
+    0,
+    0.0039,
+    0.0157,
+    0.0352,
+    0.0625 9.09%,
+    0.1407,
+    0.25,
+    0.3908,
+    0.5625,
+    0.7654,
+    1
+  );
+  --ease-bounce: linear(
+    0,
+    0.004,
+    0.016,
+    0.035,
+    0.063,
+    0.098,
+    0.141,
+    0.191,
+    0.25,
+    0.316,
+    0.391 36.36%,
+    0.563,
+    0.766,
+    1 54.55%,
+    0.946,
+    0.908 72.73%,
+    0.953,
+    1,
+    0.994,
+    0.998,
+    1
+  );
+  --ease-emphasized: linear(
+    0,
+    0.0038,
+    0.0155,
+    0.0352,
+    0.0625 9%,
+    0.1407,
+    0.25 15%,
+    0.5625 36%,
+    0.7655 45%,
+    1
+  );
+
+}
