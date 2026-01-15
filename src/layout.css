@@ -1,0 +1,300 @@
+@property --layout-gap {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1rem;
+}
+
+.layout-card {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--layout-min-card-width, var(--min-card-width, 290px)), 1fr)
+  );
+  gap: var(--layout-gap, var(--gap, 2rem));
+}
+
+/* Sidebar Layout - Sidebar + main content area */
+.layout-sidebar {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--layout-gap, var(--gap, 2rem));
+  align-items: start;
+}
+
+.layout-sidebar.narrow {
+  grid-template-columns: 150px 1fr;
+}
+
+.layout-sidebar.wide {
+  grid-template-columns: 350px 1fr;
+}
+
+.layout-sidebar.invert {
+  grid-template-columns: 1fr 250px;
+
+  /* Place first child (sidebar) in second column, second child (main) in first column */
+  > :first-child {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  > :nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.layout-sidebar.invert.narrow {
+  grid-template-columns: 1fr 150px;
+}
+
+.layout-sidebar.invert.wide {
+  grid-template-columns: 1fr 350px;
+}
+
+.layout-sidebar.fill {
+  align-items: stretch;
+
+  /* Sidebar is always :first-child in DOM, even for .invert (CSS grid handles visual placement) */
+  > :first-child {
+    overflow-y: auto;
+  }
+}
+
+/* Fixed sidebar - stays pinned while main content scrolls */
+/* Sidebar is always :first-child in DOM, even for .invert (CSS grid handles visual placement) */
+.layout-sidebar.fixed > :first-child {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100dvh;
+  overflow-y: auto;
+}
+
+.layout-sidebar.layout-readable {
+  --max-width: 1400px;
+}
+
+/* Container query version - responds to parent container size */
+@container (max-width: 768px) {
+  .layout-sidebar,
+  .layout-sidebar.narrow,
+  .layout-sidebar.wide,
+  .layout-sidebar.invert,
+  .layout-sidebar.invert.narrow,
+  .layout-sidebar.invert.wide {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-sidebar.invert > :first-child,
+  .layout-sidebar.invert > :nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .layout-sidebar.fill > :first-child,
+  .layout-sidebar.fixed > :first-child {
+    position: static;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* Media query fallback - for when not inside a container */
+@media (width < 768px) {
+  .layout-sidebar,
+  .layout-sidebar.narrow,
+  .layout-sidebar.wide,
+  .layout-sidebar.invert,
+  .layout-sidebar.invert.narrow,
+  .layout-sidebar.invert.wide {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset grid placement for invert on mobile so items stack in DOM order */
+  .layout-sidebar.invert > :first-child,
+  .layout-sidebar.invert > :nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Reset fill/fixed sidebar styles on mobile - sidebar is always :first-child */
+  .layout-sidebar.fill > :first-child,
+  .layout-sidebar.fixed > :first-child {
+    position: static;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* Split Layout - 50/50 two column layout */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--layout-gap, var(--gap, 2rem));
+  align-items: start;
+}
+
+@media (width < 768px) {
+  .layout-split {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-split.no-stack {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Three Column Layout - Three equal columns */
+.layout-three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--layout-gap, var(--gap, 2rem));
+  align-items: start;
+}
+
+@media (width < 1024px) {
+  .layout-three-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width < 768px) {
+  .layout-three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Readable Layout - Max-width for optimal readability */
+.layout-readable {
+  width: 100%;
+  max-width: var(--layout-max-width, var(--max-width, 1200px));
+  padding-inline: var(--layout-padding, var(--padding, 2rem));
+  margin: 0 auto;
+}
+
+.layout-readable.center {
+  margin-inline: auto;
+}
+
+.layout-readable.end {
+  margin-inline-start: auto;
+}
+
+.layout-holy-grail {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--layout-gap, var(--gap, 2rem));
+}
+
+@media (width < 768px) {
+  .layout-holy-grail {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full Bleed - Break out of readable container */
+.layout-readable .full-bleed {
+  width: 100vi;
+  margin-inline: calc(50% - 50vi);
+}
+
+/* Stack Layout - Vertical flexbox stack */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--layout-gap, var(--gap, 1rem));
+}
+
+:is(.stack) > * {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* Cluster Layout - Horizontal wrapping list with gap */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-gap, var(--gap, 1rem));
+  align-items: center;
+}
+
+/* Carousel Layout - Horizontal scroll with scroll snap */
+.carousel {
+  display: flex;
+  gap: var(--layout-gap, var(--gap, 1rem));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--layout-padding, var(--padding, 1rem));
+  scrollbar-width: thin;
+  > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+/* Carousel Layout - Horizontal scroll with scroll snap */
+.reel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gap, var(--gap, 1rem));
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-block: var(--layout-padding, var(--padding, 1rem));
+  scrollbar-width: thin;
+  max-height: var(--reel-height, 80vh);
+  > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+.swipe {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-block: var(--border-1);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  > :nth-child(2) {
+    width: 100cqw;
+    scroll-snap-align: center;
+    padding: var(--pad-l) var(--vs-base);
+  }
+
+  > button {
+    border-radius: 0;
+    box-shadow: 1px 1px 4px rgb(0 0 0 / 0.5) inset;
+    border: none;
+    width: 200px;
+  }
+
+  &.stop {
+    > * {
+      &:first-of-type {
+        animation: snap_start_hack 0.001s forwards;
+      }
+      &:last-of-type {
+        scroll-snap-align: end;
+      }
+    }
+  }
+}
+
+/* Thank you Adam Argyle @argyleink for this hack.*/
+/* nerdy.dev */
+@keyframes snap_start_hack {
+  to {
+    scroll-snap-align: start;
+  }
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  view-transition-name: var(--transition-name);
+}

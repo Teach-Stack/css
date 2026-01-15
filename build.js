@@ -3,19 +3,21 @@ import browserslist from 'browserslist'
 
 import { writeFileSync, mkdirSync } from 'node:fs'
 
+const targets = browserslistToTargets(browserslist('baseline 2024'))
+const sourceMap = true
 
 let { code: minCode, map: minMap } = bundle({
   filename: './src/index.css',
   minify: true,
-  targets: browserslistToTargets(browserslist('baseline 2024')),
-  sourceMap: true,
+  targets,
+  sourceMap,
 })
 
 let { code, map } = bundle({
   filename: './src/index.css',
   minify: false,
-  targets: browserslistToTargets(browserslist('baseline 2024')),
-  sourceMap: true,
+  targets,
+  sourceMap,
 })
 
 mkdirSync('./dist', { recursive: true })

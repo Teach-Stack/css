@@ -1,0 +1,96 @@
+.readable {
+  max-width: 900px;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+
+  &.auto {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(var(--grid-min, 150px), 1fr)
+    );
+  }
+}
+
+.split {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  &.even {
+    flex: 1 1 auto;
+  }
+  &.vertical {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+/* Container query for .split - stacks when in narrow container */
+@container (max-width: 500px) {
+  .split {
+    flex-direction: column;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0px;
+  border: 0px;
+}
+
+.no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.row {
+  margin-block: var(--vs-m);
+}
+
+.circle {
+  --size: 40px;
+  border-radius: var(--size);
+  padding: 0;
+  width: var(--size);
+  height: var(--size);
+}
+
+/* Aspect Ratio Utilities */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+.aspect-custom {
+  aspect-ratio: var(--aspect, 1 / 1);
+}
