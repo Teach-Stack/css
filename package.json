@@ -1,10 +1,14 @@
 {
-  "name": "repl-ui",
+  "name": "@teach-stack/css",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple CSS framework for Teach Stack projects. Inspired by Graffiti CSS.",
   "files": [
-    "dist/*.css"
+    "dist"
   ],
+  "exports": {
+    ".": "./dist/index.min.css"
+  },
+  "main": "index.min.css",
   "type": "module",
   "scripts": {
     "build:css": "node ./build.js",
