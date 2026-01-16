@@ -1,0 +1,43 @@
+input:not(.unstyled),
+textarea:not(.unstyled),
+select:not(.unstyled) {
+  background-color: white;
+  border: var(--border-1);
+  border-color: var(--slate-4);
+  border-radius: var(--br-s);
+  padding-inline: var(--pad-s);
+  line-height: var(--lh-xl);
+  width: 100%;;
+  &:focus-visible {
+    outline: 1px solid var(--blue-5);
+    /* outline-offset: 2px; */
+  }
+  &[aria-invalid="true"],
+  &.error {
+    border-color: var(--red-6);
+    &:focus-visible {
+      outline-color: var(--red-6);
+    }
+  }
+  &.success {
+    border-color: var(--green-6);
+    &:focus-visible {
+      outline-color: var(--green-6);
+    }
+  }
+}
+
+label {
+  --fl: 1;
+  display: block;
+  margin-block-end: var(--vs-xs);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--pad-m) center;
+  padding-inline-end: calc(var(--pad-m) + 1.5em);
+  padding-block: 1;
+}

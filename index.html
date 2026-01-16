@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/index.css">
-    <title>REPL UI Preview</title>
+    <title>@teach-stack/css Preview</title>
   </head>
-  <body class="layout-readable center stack">
+  <body class="layout-readable center stack" style="background-color: var(--slate-0);">
     <section class="stack">
       <h3>Buttons</h3>
       <h4>Regular Buttons</h2>
@@ -26,17 +26,35 @@
         <button class="warning sm">Button</button>
       </div>
     </section>
-    <section>
+    <section class="stack">
       <h3>Dialog</h3>
-      <div style="margin: var(--pad-l)">
+      <div>
         <button command="show-modal" commandfor="dialog-demo">Open</button>
         <dialog id="dialog-demo" closedby="any">
           <p>Here is a simple dialog</p>
         </dialog>
       </div>
     </section>
+
+    <section class="stack">
+      <h3>Forms</h3>
+      <h4>Inputs</h2>
+      <div>
+        <label for="textInput">Text Input</label>
+        <input id="textInput" type="text" />
+        <label for="invalidInput">Invalid Input</label>
+        <input id="invalidInput" aria-invalid="true" type="text" />
+        <label for="demoSelect">Select</label>
+        <select id="demoSelect">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+    </section>
     <script type="module">
       import '@fontsource-variable/space-grotesk';
+      
     </script>
   </body>
 </html>
