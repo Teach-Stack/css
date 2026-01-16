@@ -1,4 +1,4 @@
-dialog:not(.unstyled), .dialog-content {
+dialog:not(.unstyled) {
   max-width: 40ch;
   width: calc(100% - var(--pad-xxl) * 2);
   overflow: visible;
@@ -27,8 +27,14 @@ dialog:not(.unstyled), .dialog-content {
 }
 
 @starting-style {
-  dialog[open] {
+  dialog[open]:not(.unstyled) {
     opacity: 0;
     scale: 0.95;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  dialog:not(.unstyled){
+    transition: none;
   }
 }
