@@ -1,20 +1,20 @@
-import { bundle, browserslistToTargets } from 'lightningcss'
-import browserslist from 'browserslist'
+import { mkdirSync, writeFileSync } from 'node:fs'
 
-import { writeFileSync, mkdirSync } from 'node:fs'
+import browserslist from 'browserslist'
+import { browserslistToTargets, bundle } from 'lightningcss'
 
 const targets = browserslistToTargets(browserslist('baseline 2024'))
 const sourceMap = true
 
-let { code: minCode, map: minMap } = bundle({
-  filename: './src/index.css',
+const { code: minCode, map: minMap } = bundle({
+  filename: './src/styles/index.css',
   minify: true,
   targets,
   sourceMap,
 })
 
-let { code, map } = bundle({
-  filename: './src/index.css',
+const { code, map } = bundle({
+  filename: './src/styles/index.css',
   minify: false,
   targets,
   sourceMap,

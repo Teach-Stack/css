@@ -1,4 +1,5 @@
-button:not(.unstyled), .btn {
+button:not(.unstyled),
+.btn {
   --btn-color: var(--slate);
   --fl: 0;
 
@@ -7,7 +8,7 @@ button:not(.unstyled), .btn {
 
   cursor: pointer;
   user-select: none;
-  
+
   background-color: color-mix(in oklch, var(--btn-color) 4%, white);
   color: color-mix(in oklch, var(--btn-color) 60%, black);
 
@@ -53,6 +54,7 @@ button:not(.unstyled), .btn {
 
   &.sm {
     padding: var(--pad-s);
-    --fl: -0.5;
+    --fl: -0.25;
+    line-height: var(--lh-xs);
   }
 }

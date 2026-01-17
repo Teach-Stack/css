@@ -1,60 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/index.css">
-    <title>@teach-stack/css Preview</title>
-  </head>
-  <body class="layout-readable center stack" style="background-color: var(--slate-0);">
-    <section class="stack">
-      <h3>Buttons</h3>
-      <h4>Regular Buttons</h2>
-      <div class="flex">
-        <button>Button</button>
-        <button class="primary">Button</button>
-        <button class="success">Button</button>
-        <button class="error">Button</button>
-        <button class="warning">Button</button>
-      </div>
-      <h4>Small Buttons</h4>
-      <div class="flex">
-        <button class="sm">Button</button>
-        <button class="primary sm">Button</button>
-        <button class="success sm">Button</button>
-        <button class="error sm">Button</button>
-        <button class="warning sm">Button</button>
-      </div>
-    </section>
-    <section class="stack">
-      <h3>Dialog</h3>
-      <div>
-        <button command="show-modal" commandfor="dialog-demo">Open</button>
-        <dialog id="dialog-demo" closedby="any">
-          <p>Here is a simple dialog</p>
-        </dialog>
-      </div>
-    </section>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/src/styles/index.css">
+        <title>@teach-stack/css Preview</title>
+    </head>
+    <body class="layout-readable center stack" style="background-color: var(--slate-0);">
+        <!-- <section class="stack">
+            <h3>Buttons</h3>
+            <h4>Regular Buttons</h4>
+            <div class="flex">
+                <button>Button</button>
+                <button class="primary">Button</button>
+                <button class="success">Button</button>
+                <button class="error">Button</button>
+                <button class="warning">Button</button>
+            </div>
+            <h4>Small Buttons</h4>
+            <div class="flex">
+                <button class="sm">Button</button>
+                <button class="primary sm">Button</button>
+                <button class="success sm">Button</button>
+                <button class="error sm">Button</button>
+                <button class="warning sm">Button</button>
+            </div>
+        </section>
 
-    <section class="stack">
-      <h3>Forms</h3>
-      <h4>Inputs</h2>
-      <div>
-        <label for="textInput">Text Input</label>
-        <input id="textInput" type="text" />
-        <label for="invalidInput">Invalid Input</label>
-        <input id="invalidInput" aria-invalid="true" type="text" />
-        <label for="demoSelect">Select</label>
-        <select id="demoSelect">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-      </div>
-    </section>
-    <script type="module">
-      import '@fontsource-variable/space-grotesk';
-      
-    </script>
-  </body>
+        <section class="stack">
+            <h3>Dialog</h3>
+            <div>
+                <button command="show-modal" commandfor="dialog-demo">Open</button>
+                <dialog id="dialog-demo" closedby="any">
+                    <p>Here is a simple dialog</p>
+                </dialog>
+            </div>
+        </section>
+
+        <section class="stack">
+            <h3>Forms</h3>
+            <h4>Inputs</h4>
+            <div>
+                <label for="textInput">Text Input</label>
+                <input id="textInput" type="text">
+                <label for="invalidInput">Invalid Input</label>
+                <input id="invalidInput" aria-invalid="true" type="text">
+                <label for="demoSelect">Select</label>
+                <select id="demoSelect">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+        </section> -->
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
