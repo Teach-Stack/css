@@ -52,6 +52,10 @@ button:not(.unstyled),
     --btn-color: var(--yellow);
   }
 
+  &.block {
+    width: 100%;
+  }
+
   &.sm {
     padding: var(--pad-s);
     --fl: -0.25;
