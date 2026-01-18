@@ -1,0 +1,27 @@
+.alert {
+  --alert-color: var(--slate);
+
+  display: flex;
+  align-items: center;
+
+  padding: var(--pad-m);
+
+  background-color: color-mix(in oklch, var(--alert-color) 4%, white);
+  color: color-mix(in oklch, var(--alert-color) 40%, black);
+  border: var(--border-2);
+  border-color: color-mix(in oklch, var(--alert-color) 80%, white);
+  border-radius: var(--br-s);
+
+  &.primary {
+    --alert-color: var(--blue);
+  }
+  &.success {
+    --alert-color: var(--green);
+  }
+  &.error {
+    --alert-color: var(--red);
+  }
+  &.warning {
+    --alert-color: var(--yellow);
+  }
+}

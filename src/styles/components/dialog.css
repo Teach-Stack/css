@@ -10,7 +10,7 @@ dialog:not(.unstyled) {
     scale 0.2s var(--ease-smooth),
     overlay 0.2s var(--ease-smooth) allow-discrete,
     display 0.2s var(--ease-smooth) allow-discrete;
-  
+
   padding: var(--pad-xl);
 
   border: none;
@@ -34,7 +34,7 @@ dialog:not(.unstyled) {
 }
 
 @media (prefers-reduced-motion) {
-  dialog:not(.unstyled){
+  dialog:not(.unstyled) {
     transition: none;
   }
 }

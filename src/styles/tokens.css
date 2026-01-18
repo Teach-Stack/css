@@ -1,7 +1,6 @@
 :root {
   /* Typography */
-  --font-sans: 'Space Grotesk Variable', sans-serif;
-
+  --font-sans: "Space Grotesk Variable", sans-serif;
 
   /* Base Colors */
   --blue: oklch(0.623 0.214 259.815);
@@ -88,7 +87,6 @@
   --min-vw: 360;
   --max-vw: 800;
 
-
   /* Borders */
   --border-1: solid 1px black;
   --border-2: solid 2px black;
@@ -100,21 +98,8 @@
   --br-xl: 24px;
   --br-xxl: 32px;
 
-
   /* Animations */
-  --ease-smooth: linear(
-    0,
-    0.0039,
-    0.0157,
-    0.0352,
-    0.0625 9.09%,
-    0.1407,
-    0.25,
-    0.3908,
-    0.5625,
-    0.7654,
-    1
-  );
+  --ease-smooth: linear(0, 0.0039, 0.0157, 0.0352, 0.0625 9.09%, 0.1407, 0.25, 0.3908, 0.5625, 0.7654, 1);
   --ease-bounce: linear(
     0,
     0.004,
@@ -138,17 +123,5 @@
     0.998,
     1
   );
-  --ease-emphasized: linear(
-    0,
-    0.0038,
-    0.0155,
-    0.0352,
-    0.0625 9%,
-    0.1407,
-    0.25 15%,
-    0.5625 36%,
-    0.7655 45%,
-    1
-  );
-
+  --ease-emphasized: linear(0, 0.0038, 0.0155, 0.0352, 0.0625 9%, 0.1407, 0.25 15%, 0.5625 36%, 0.7655 45%, 1);
 }
