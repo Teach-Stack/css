@@ -49,7 +49,7 @@ textarea:not(.unstyled).fixed {
 }
 
 label:not(.unstyled) {
-  --fl: 1;
+  --fl: 0;
   display: block;
   margin-block-end: var(--vs-xs);
 
