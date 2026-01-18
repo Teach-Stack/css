@@ -1,5 +1,5 @@
 dialog:not(.unstyled) {
-  max-width: 40ch;
+  max-width: 50ch;
   width: calc(100% - var(--pad-xxl) * 2);
   overflow: visible;
 
