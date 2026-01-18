@@ -9,3 +9,10 @@
 @import "components/dialog.css";
 @import "components/forms.css";
 @import "components/alert.css";
+@import "components/tag.css";
+
+@media (prefers-reduced-motion) {
+  * {
+    transition-duration: 0s !important;
+  }
+}

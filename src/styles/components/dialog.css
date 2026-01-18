@@ -32,9 +32,3 @@ dialog:not(.unstyled) {
     scale: 0.95;
   }
 }
-
-@media (prefers-reduced-motion) {
-  dialog:not(.unstyled) {
-    transition: none;
-  }
-}
