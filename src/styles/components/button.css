@@ -1,4 +1,4 @@
-button:not(.unstyled),
+button:not(.unstyled, .tag),
 .btn {
   --btn-color: var(--slate);
   --fl: 0;
@@ -20,6 +20,8 @@ button:not(.unstyled),
   border-color: color-mix(in oklch, var(--btn-color) 80%, white);
   border-radius: var(--br-s);
   padding: var(--pad-s) var(--pad-xl);
+
+  transition: background-color 0.2s var(--ease-smooth);
 
   &:hover:not(:disabled) {
     background-color: color-mix(in oklch, var(--btn-color) 18%, white);

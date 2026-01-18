@@ -5,6 +5,7 @@ import AlertsDemo from './components/alerts'
 import ButtonsDemo from './components/buttons'
 import DialogDemo from './components/dialog'
 import FormsDemo from './components/forms'
+import TagsDemo from './components/tags'
 
 document.body.appendChild(
   <React.Fragment>
@@ -12,5 +13,6 @@ document.body.appendChild(
     <DialogDemo />
     <FormsDemo />
     <AlertsDemo />
+    <TagsDemo />
   </React.Fragment>,
 )

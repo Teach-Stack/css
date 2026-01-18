@@ -1,0 +1,49 @@
+.tag {
+  --tag-color: white;
+
+  --fl: -1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pad-xs);
+  padding: var(--pad-xs) var(--pad-s);
+
+  background-color: color-mix(in oklch, var(--tag-color) 25%, white);
+  color: color-mix(in oklch, var(--tag-color) 40%, black);
+  border-radius: var(--br-s);
+
+  transition: background-color 0.2s var(--ease-smooth);
+
+  &:is(a, button) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: color-mix(in oklch, var(--tag-color) 35%, white);
+    }
+
+    &:active {
+      background-color: color-mix(in oklch, var(--tag-color) 55%, white);
+    }
+  }
+
+  &:is(button) {
+    appearance: none;
+    border: none;
+  }
+
+  &:is(a) {
+    text-decoration: none;
+  }
+
+  &.primary {
+    --tag-color: var(--blue);
+  }
+  &.success {
+    --tag-color: var(--green);
+  }
+  &.error {
+    --tag-color: var(--red);
+  }
+  &.warning {
+    --tag-color: var(--yellow);
+  }
+}
