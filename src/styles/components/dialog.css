@@ -14,7 +14,7 @@ dialog:not(.unstyled) {
   padding: var(--pad-xl);
 
   border: none;
-  border-radius: var(--br-m);
+  border-radius: var(--br-s);
 
   background-color: var(--slate-1);
   &::backdrop {
