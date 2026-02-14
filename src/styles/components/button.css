@@ -23,6 +23,10 @@ button:not(.unstyled, .tag),
 
   transition: background-color 0.2s var(--ease-smooth);
 
+  &:is(a) {
+    text-decoration: none;
+  }
+
   &:hover:not(:disabled) {
     background-color: color-mix(in oklch, var(--btn-color) 18%, white);
   }
