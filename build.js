@@ -27,3 +27,6 @@ writeFileSync('./dist/index.min.css.map', minMap)
 
 writeFileSync('./dist/index.css', code)
 writeFileSync('./dist/index.css.map', map)
+
+writeFileSync('./dist/index.d.ts', 'export {}\n')
+
