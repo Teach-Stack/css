@@ -1,5 +1,3 @@
-import React from 'jsx-dom'
-
 export function DemoSection(props) {
   return (
     <section id={props.name} class="stack">

@@ -1,5 +1,3 @@
-import React from 'jsx-dom'
-
 import { DemoSection } from '../section'
 
 export default function FormsDemo() {

@@ -10,6 +10,7 @@
 @import "components/forms.css";
 @import "components/alert.css";
 @import "components/tag.css";
+@import "components/table.css";
 
 @media (prefers-reduced-motion) {
   * {
