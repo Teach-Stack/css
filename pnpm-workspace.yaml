@@ -1,6 +1,3 @@
-ignoredBuiltDependencies:
-  - esbuild
-
-onlyBuiltDependencies:
-  - core-js
-  - lightningcss-cli
+allowBuilds:
+  esbuild: true
+  lightningcss-cli: true
