@@ -1,0 +1,49 @@
+.table {
+  overflow-x: auto;
+  border: var(--border-2);
+  border-radius: var(--table-border, var(--br-m));
+  background-color: white;
+
+  table {
+    inline-size: 100%;
+    /* thead/td row borders only render when collapsed */
+    border-collapse: collapse;
+  }
+
+  :is(td, th) {
+    text-align: start;
+    padding: var(--pad-m) var(--vs-base);
+  }
+
+  thead {
+    border-block-end: var(--border-2);
+  }
+
+  th {
+    background-color: var(--slate-8);
+    color: var(--slate-0);
+  }
+
+  td {
+    border-block-end: var(--border-1);
+  }
+
+  tr:last-child td {
+    border: none;
+  }
+
+  &.zebra tbody tr:nth-child(even) {
+    background-color: var(--slate-1);
+  }
+
+  &.sticky {
+    overflow-y: auto;
+    max-block-size: var(--table-max-height, 70vh);
+
+    thead th {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 1;
+    }
+  }
+}
