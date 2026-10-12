@@ -1,7 +1,10 @@
 {
   "name": "@teach-stack/css",
   "author": "Justin Forlenza",
-  "repository": "https://github.com/teach-stack/css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teach-Stack/css.git"
+  },
   "version": "0.1.6",
   "license": "MIT",
   "description": "A simple drop-in CSS framework for Teach Stack projects. Inspired by Graffiti CSS.",
